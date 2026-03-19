@@ -1,2 +1,31 @@
 @import "tailwindcss";
 @plugin "daisyui";
+.device {
+  color: white;
+  border: 4px solid black;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  width: 350px;
+  margin: 50px;
+  padding: 10px;
+  background-color: gray;
+}
+.buyNow {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 7px;
+  margin-top: 10px;
+  font-size: 15px;
+  transition: background-color 0.2s ease-in-out;
+}
+.buyNow:hover {
+  background-color: rgb(1, 144, 1);
+  cursor: pointer;
+}
+.buyNow:active {
+  background-color: green;
+}
