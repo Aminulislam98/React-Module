@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-const ModulePractice = ({ brand, name, price }) => {
+const ModulePractice = ({ brand, name, price = "Contact us for Price" }) => {
   return (
     <div className="device">
       <p>Brand: {brand}</p>
