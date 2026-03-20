@@ -3,6 +3,7 @@ import ModulePractice from "./Hero-section/Module-31";
 import Todo from "./Hero-section/Todo";
 import Conditional from "./Hero-section/Conditional";
 import ActorDetails from "./Hero-section/ActorDetails";
+import Developers from "./Hero-section/Developers";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         time="34 Minutes"
       />
       <ActorDetails />
+      <Developers />
     </>
   );
 }
