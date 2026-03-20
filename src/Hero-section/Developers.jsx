@@ -15,12 +15,6 @@ const Developers = () => {
       Profession: "Web developer",
       Location: "United Kingdom",
     },
-    {
-      id: "3",
-      name: "Marjiya Begum",
-      Profession: "House wife and kamla beti",
-      Location: "Bangladesh, Gureshpur",
-    },
   ];
   return (
     <div>
