@@ -1,6 +1,7 @@
 import "./App.css";
 import ModulePractice from "./Hero-section/Module-31";
 import Todo from "./Hero-section/Todo";
+import Conditional from "./Hero-section/Conditional";
 
 function App() {
   return (
@@ -10,18 +11,23 @@ function App() {
       <ModulePractice name="I Phone 17 Pro Max" brand="Apple" price="$1399" />
       <Todo
         isDone={true}
-        task={"Practice React.js today at least 30 Minutes "}
-        time={"30 Minutes"}
+        task="Practice React.js today at least 30 Minutes "
+        time="30 Minutes"
       />
       <Todo
         isDone={false}
-        task={"Practice React.js today at least 30 Minutes "}
-        time={"30 Minutes"}
+        task="Practice React.js today at least 30 Minutes "
+        time="30 Minutes"
       />
       <Todo
         isDone={true}
-        task={"Read JavaScript documentation for 20 minutes"}
-        time={"40 Minutes"}
+        task="Read JavaScript documentation for 20 minutes"
+        time="55 Minutes"
+      />
+      <Conditional
+        isDone={false}
+        task="Read JavaScript documentation for 20 minutes"
+        time="34 Minutes"
       />
     </>
   );

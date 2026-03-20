@@ -6,7 +6,7 @@ const Todo = ({ task, isDone, time }) => {
     return (
       <div className=" border-2 max-w-90 p-4 ml-3 mb-2 rounded-2xl">
         <p>Task Done: {task}</p>
-        <p>Duration: {time}</p>
+        {time && <p>Total Duration: {time}</p>}
       </div>
     );
   }
