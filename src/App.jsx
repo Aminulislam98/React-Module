@@ -2,6 +2,7 @@ import "./App.css";
 import ModulePractice from "./Hero-section/Module-31";
 import Todo from "./Hero-section/Todo";
 import Conditional from "./Hero-section/Conditional";
+import ActorDetails from "./Hero-section/ActorDetails";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         task="Read JavaScript documentation for 20 minutes"
         time="34 Minutes"
       />
+      <ActorDetails />
     </>
   );
 }
