@@ -8,8 +8,47 @@ import FuncationP from "./Hero-section/FuncationP";
 import FunctionParam from "./Hero-section/FunctionParam";
 import State from "./Hero-section/State";
 import Batsman from "./Hero-section/Batsman";
+import NestProperty from "./Hero-section/NestProperty";
 
 function App() {
+  const developerObj = [
+    {
+      name: "Aminul Islam",
+      age: 23,
+      profession: "Frontend Developer",
+      country: "UK",
+    },
+    {
+      name: "Khadijah Islam",
+      age: 27,
+      profession: "Backend Developer",
+      country: "Spain",
+    },
+    {
+      name: "Kenji Tanaka",
+      age: 30,
+      profession: "Mobile Developer",
+      country: "Japan",
+    },
+    {
+      name: "Amara Okafor",
+      age: 25,
+      profession: "DevOps Engineer",
+      country: "Nigeria",
+    },
+    {
+      name: "Lucas Dupont",
+      age: 28,
+      profession: "Full Stack Developer",
+      country: "France",
+    },
+    {
+      name: "Priya Sharma",
+      age: 26,
+      profession: "UI/UX Designer",
+      country: "India",
+    },
+  ];
   return (
     <>
       <ModulePractice name="I Phone 12 Pro Max" brand="Apple" price="$1200" />
@@ -41,6 +80,11 @@ function App() {
       <FunctionParam />
       <State />
       <Batsman />
+      <div className="grid grid-cols-3 gap-2">
+        {developerObj.map((developer) => (
+          <NestProperty {...developer}></NestProperty>
+        ))}
+      </div>
     </>
   );
 }
