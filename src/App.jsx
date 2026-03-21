@@ -5,6 +5,8 @@ import Conditional from "./Hero-section/Conditional";
 import ActorDetails from "./Hero-section/ActorDetails";
 import Developers from "./Hero-section/Developers";
 import FuncationP from "./Hero-section/FuncationP";
+import FunctionParam from "./Hero-section/FunctionParam";
+import State from "./Hero-section/State";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
       <ActorDetails />
       <Developers />
       <FuncationP />
+      <FunctionParam />
+      <State />
     </>
   );
 }
