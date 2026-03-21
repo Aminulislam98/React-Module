@@ -4,6 +4,7 @@ import Todo from "./Hero-section/Todo";
 import Conditional from "./Hero-section/Conditional";
 import ActorDetails from "./Hero-section/ActorDetails";
 import Developers from "./Hero-section/Developers";
+import FuncationP from "./Hero-section/FuncationP";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
       />
       <ActorDetails />
       <Developers />
+      <FuncationP />
     </>
   );
 }
