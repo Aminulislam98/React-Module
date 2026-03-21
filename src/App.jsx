@@ -7,6 +7,7 @@ import Developers from "./Hero-section/Developers";
 import FuncationP from "./Hero-section/FuncationP";
 import FunctionParam from "./Hero-section/FunctionParam";
 import State from "./Hero-section/State";
+import Batsman from "./Hero-section/Batsman";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
       <FuncationP />
       <FunctionParam />
       <State />
+      <Batsman />
     </>
   );
 }
