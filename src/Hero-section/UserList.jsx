@@ -2,6 +2,7 @@ import React from "react";
 
 const UserList = (user) => {
   const person = user.user;
+  console.log(person);
   return (
     <div className="border-2 border-yellow-600 m-4 px-1 py-10 flex flex-col justify-center items-center rounded-2xl">
       <p
@@ -10,7 +11,7 @@ const UserList = (user) => {
       >
         {person.name[0]}
       </p>
-      <p className="text-2xl font-semibold">{person.name}</p>
+      <p className="text-2xl font-semibold text-yellow-500">{person.name}</p>
       <h2 className="text-gray-400">{person.username}</h2>
       <p>Phone: {person.phone}</p>
       <p>
@@ -19,6 +20,7 @@ const UserList = (user) => {
           {person.website}
         </a>
       </p>
+      <p className="cursor-pointer">Email: {person.email}</p>
     </div>
   );
 };
