@@ -1,12 +1,17 @@
 import React from "react";
 
 const NestProperty = ({ name, age, country, profession }) => {
+  const contactStyle = {
+    backgroundColor: "#007BFF",
+    color: "white",
+    border: "none",
+  };
   return (
     <div className="border-2 p-4 border-green-600 mt-3 space-y-2">
       <p className="rounded-full bg-green-600 w-12 h-12 flex justify-center items-center">
         {name[0].toUpperCase()}
       </p>
-      <h1 className="text-[18px] font-bold">{name}</h1>
+      <h1 className="text-[18px] font-bold text-green-600">{name}</h1>
       <div className="flex space-x-2 ">
         <p className="py-0.5 px-2 bg-green-500 text-[12px] font-semibold rounded-2xl flex justify-center items-center ">
           Age: {age}
@@ -18,6 +23,7 @@ const NestProperty = ({ name, age, country, profession }) => {
           Profession: {profession}
         </p>
       </div>
+      <button style={contactStyle}>Contact</button>
     </div>
   );
 };
