@@ -10,7 +10,15 @@ import State from "./Hero-section/State";
 import Batsman from "./Hero-section/Batsman";
 import NestProperty from "./Hero-section/NestProperty";
 import Style from "./Hero-section/Style";
+import { Suspense } from "react";
+import List from "./Hero-section/List";
+
+const userLists = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  return response.json();
+};
 function App() {
+  const userListsResponse = userLists();
   const developerObj = [
     {
       name: "Aminul Islam",
@@ -86,6 +94,9 @@ function App() {
         ))}
       </div>
       <Style isImportant={true} />
+      <Suspense callBack={<h3>Loading</h3>} className="hi">
+        <List userListsResponse={userListsResponse}></List>
+      </Suspense>
     </>
   );
 }
