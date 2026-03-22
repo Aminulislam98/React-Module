@@ -9,7 +9,7 @@ import FunctionParam from "./Hero-section/FunctionParam";
 import State from "./Hero-section/State";
 import Batsman from "./Hero-section/Batsman";
 import NestProperty from "./Hero-section/NestProperty";
-
+import Style from "./Hero-section/Style";
 function App() {
   const developerObj = [
     {
@@ -85,6 +85,7 @@ function App() {
           <NestProperty {...developer}></NestProperty>
         ))}
       </div>
+      <Style isImportant={true} />
     </>
   );
 }
