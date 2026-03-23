@@ -1,7 +1,7 @@
 import React from "react";
 
-const Product = ({ product }) => {
-  console.log(product);
+const Product = ({ product, handleButton }) => {
+  //   console.log(product);
   return (
     <div className="bg-white border border-gray-300 rounded-2xl overflow-hidden ">
       <div className="topSection flex justify-center items-center bg-gray-100 py-4 ">
@@ -19,7 +19,12 @@ const Product = ({ product }) => {
           {product.description}
         </p>
         <div className="mt-3">
-          <button onClick={product.id} className="btn btn-primary">
+          <button
+            onClick={() => {
+              handleButton(product);
+            }}
+            className="btn btn-primary"
+          >
             Purchase
           </button>
         </div>

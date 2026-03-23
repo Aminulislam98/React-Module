@@ -10,10 +10,12 @@ import State from "./Hero-section/State";
 import Batsman from "./Hero-section/Batsman";
 import NestProperty from "./Hero-section/NestProperty";
 import Style from "./Hero-section/Style";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import List from "./Hero-section/List";
 import FreeCodeCampCounter from "./Hero-section/FreeCodeCampCounter";
 import Products from "./Hero-section/Products";
+import Cart from "./Hero-section/Cart";
+
 const userLists = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   return response.json();
@@ -22,8 +24,9 @@ const productApi = async () => {
   const response = await fetch("https://fakestoreapi.com/products");
   return response.json();
 };
+const products = productApi();
+
 function App() {
-  const products = productApi();
   const userListsResponse = userLists();
   const developerObj = [
     {
@@ -63,6 +66,21 @@ function App() {
       country: "India",
     },
   ];
+  const [cart, setCart] = useState([]);
+
+  const handleButton = (product) => {
+    const exist = cart.find((item) => item.id === product.id);
+    setCart((prevCart) => {
+      if (exist) {
+        return prevCart.map((prevItem) =>
+          prevItem.id === product.id
+            ? { ...prevItem, quantity: prevItem.quantity + 1 }
+            : prevItem,
+        );
+      }
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
+  };
   return (
     <>
       <ModulePractice name="I Phone 12 Pro Max" brand="Apple" price="$1200" />
@@ -105,8 +123,9 @@ function App() {
       </Suspense>
       <FreeCodeCampCounter />
       <Suspense>
-        <Products products={products} />
+        <Products products={products} handleButton={handleButton} />
       </Suspense>
+      <Cart cart={cart}></Cart>
     </>
   );
 }

@@ -2,7 +2,6 @@ import React from "react";
 
 const UserList = (user) => {
   const person = user.user;
-  console.log(person);
   return (
     <div className="border-2 border-yellow-600 m-4 px-1 py-10 flex flex-col justify-center items-center rounded-2xl">
       <p
