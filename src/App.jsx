@@ -69,8 +69,8 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const handleButton = (product) => {
-    const exist = cart.find((item) => item.id === product.id);
     setCart((prevCart) => {
+      const exist = prevCart.find((item) => item.id === product.id);
       if (exist) {
         return prevCart.map((prevItem) =>
           prevItem.id === product.id
@@ -79,6 +79,14 @@ function App() {
         );
       }
       return [...prevCart, { ...product, quantity: 1 }];
+    });
+  };
+  const handleDelete = (deleteProduct) => {
+    setCart((prev) => {
+      const exist = prev.find((prevItem) => prevItem.id === deleteProduct.id);
+      if (exist) {
+        return prev.filter((preItem) => preItem.id !== deleteProduct.id);
+      }
     });
   };
   return (
@@ -125,7 +133,7 @@ function App() {
       <Suspense>
         <Products products={products} handleButton={handleButton} />
       </Suspense>
-      <Cart cart={cart}></Cart>
+      <Cart cart={cart} handleDelete={handleDelete}></Cart>
     </>
   );
 }

@@ -1,4 +1,4 @@
-const CartItems = ({ cartItem }) => {
+const CartItems = ({ cartItem, handleDelete }) => {
   return (
     <div className="bg-white border border-gray-300 rounded-2xl overflow-hidden grid grid-cols-2">
       <div className="topSection flex justify-center items-center bg-gray-100 py-4 ">
@@ -15,7 +15,14 @@ const CartItems = ({ cartItem }) => {
         <p className="text-1xl text-green-600 font-semibold">
           Quantity: {cartItem.quantity}
         </p>
-        <button className="btn btn-secondary mt-3">Delete</button>
+        <button
+          onClick={() => {
+            handleDelete(cartItem);
+          }}
+          className="btn btn-secondary mt-3"
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
