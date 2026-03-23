@@ -13,12 +13,17 @@ import Style from "./Hero-section/Style";
 import { Suspense } from "react";
 import List from "./Hero-section/List";
 import FreeCodeCampCounter from "./Hero-section/FreeCodeCampCounter";
-
+import Products from "./Hero-section/Products";
 const userLists = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   return response.json();
 };
+const productApi = async () => {
+  const response = await fetch("https://fakestoreapi.com/products");
+  return response.json();
+};
 function App() {
+  const products = productApi();
   const userListsResponse = userLists();
   const developerObj = [
     {
@@ -99,6 +104,9 @@ function App() {
         <List userListsResponse={userListsResponse}></List>
       </Suspense>
       <FreeCodeCampCounter />
+      <Suspense>
+        <Products products={products} />
+      </Suspense>
     </>
   );
 }
