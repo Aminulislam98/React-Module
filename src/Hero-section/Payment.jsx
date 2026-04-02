@@ -1,3 +1,4 @@
+import { Fingerprint } from "lucide-react";
 import React from "react";
 
 const Payment = ({ cart }) => {

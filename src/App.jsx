@@ -15,6 +15,7 @@ import List from "./Hero-section/List";
 import FreeCodeCampCounter from "./Hero-section/FreeCodeCampCounter";
 import Products from "./Hero-section/Products";
 import Cart from "./Hero-section/Cart";
+import Button from "./Button";
 
 const userLists = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -81,14 +82,7 @@ function App() {
       return [...prevCart, { ...product, quantity: 1 }];
     });
   };
-  const handleDelete = (deleteProduct) => {
-    setCart((prev) => {
-      const exist = prev.find((prevItem) => prevItem.id === deleteProduct.id);
-      if (exist) {
-        return prev.filter((preItem) => preItem.id !== deleteProduct.id);
-      }
-    });
-  };
+
   return (
     <>
       <ModulePractice name="I Phone 12 Pro Max" brand="Apple" price="$1200" />
@@ -130,7 +124,7 @@ function App() {
         <List userListsResponse={userListsResponse}></List>
       </Suspense>
       <FreeCodeCampCounter />
-      <Suspense>
+      <Suspense callBack={<h1>Loading</h1>}>
         <Products products={products} handleButton={handleButton} />
       </Suspense>
       <Cart cart={cart} handleDelete={handleDelete}></Cart>
